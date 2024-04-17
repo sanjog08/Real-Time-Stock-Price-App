@@ -18,7 +18,7 @@ app.get("/get_rate/:stock_name", async (req, res) => {
             // rate is the extracted price of stock with symbols and commas
             // where cost is the filtered price of stock after removing all symbols and commas
             const rate = await extract_rate(html_rate);
-            const cost = rate.replace(/[^\d.]/g, '');
+            const cost = [rate[0]/*.replace(/[^\d.]/g, '')*/, rate[1].replace(/[^\d.]/g, '')];
             res.status(200).send(cost);
         }
         else {
@@ -32,8 +32,10 @@ app.get("/get_rate/:stock_name", async (req, res) => {
 async function extract_rate (html_rate) {
 
     const $ = cheerio.load(html_rate);
-    const element = $('.YMlKec.fxKbKc');
-    const rate = element.text();
+    const texxt = $('zzDege'/*'.P2Luy.Ebnabc.ZYVHBb'*/).text();
+    console.log(texxt);
+const element = [$('.zzDege'), $('.YMlKec.fxKbKc')/*, $('.Ebnabc.P2Luy.ZYVHBb')*/];
+    const rate = [element[0].text(), element[1].text()];
     return rate;
 }
 
