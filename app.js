@@ -8,7 +8,7 @@ app.use(cors());
 const port = process.env.PORT || 7000;
 
 app.get('/', (req, res) => {
-    res.send("API is runnng...");
+    res.send("API is running.....<br>24/7 API form Sanjog Singh, <br>You can get rate of any stock listed in BSE. <br>All you need to do just add some text after the currently running url \"/get_rate/stock-name\" <br>where \"stock-name\" is the exact symbol of the stock name listed in BSE.");
 });
 
 app.get("/get_rate/:stock_name", async (req, res) => {
