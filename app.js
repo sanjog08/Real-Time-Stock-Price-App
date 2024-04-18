@@ -5,6 +5,10 @@ const cheerio = require('cheerio')
 const app = express();
 const port = process.env.PORT || 7000;
 
+app.get('/', (req, res) => {
+    res.send("API is runnng...");
+});
+
 app.get("/get_rate/:stock_name", async (req, res) => {
     const name = req.params.stock_name;
     console.log(name);
