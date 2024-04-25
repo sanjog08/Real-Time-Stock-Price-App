@@ -359,7 +359,7 @@ class _HomepageState extends State<Homepage> {
   }
 
   Future<String> fetchStockPrice(String stockName) async {
-    String url = 'http://192.168.1.21:7000/get_rate/$stockName';
+    String url = 'https://real-time-stock-price-app.vercel.app/get_rate/$stockName';
     // String url = 'http://localhost:5000/get_price/$stockName';
 
     // String url = 'http://127.0.0.1:5000/get_price/$stockName';
